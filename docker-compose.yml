@@ -1,0 +1,27 @@
+version: "2"
+services:
+  app:
+    container_name: sanic
+    restart: always
+    build: ./sanic-web
+    ports:
+      - "8000:8000"
+    volumes:
+      - /usr/src/sanic-web/apps/static
+    environment:
+      - MYAPP_CUSTOM_CONF = 1234567890
+      - MYAPP_DEBUG = True
+      - MYAPP_ENV = DEV
+
+  nginx:
+    restart: always
+    container_name: sanic-nginx
+    build: ./nginx
+    ports:
+     - "80:80"
+    volumes:
+     - /www/static
+    volumes_from:
+     - app
+    links:
+     - app
