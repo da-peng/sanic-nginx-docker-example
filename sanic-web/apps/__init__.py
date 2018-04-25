@@ -4,11 +4,11 @@ from sanic import Sanic
 # 环境变量配置测试，必须在app初始化/也就是就是启动前配置，
 # 启动后，配置的环境变量需要重新重启服务
 
-from os import environ
+# from os import environ
 
-environ["MYAPP_CUSTOM_CONF"] = "42"
-environ["MYAPP_DEBUG"] = 'True'
-environ["MYAPP_ENV"] = 'DEV'
+# environ["MYAPP_CUSTOM_CONF"] = "42"
+# environ["MYAPP_DEBUG"] = 'True'
+# environ["MYAPP_ENV"] = 'DEV'
 
 # 初始化app,初始化的时候将配置一起配了
 app = Sanic(__name__,load_env='MYAPP_')

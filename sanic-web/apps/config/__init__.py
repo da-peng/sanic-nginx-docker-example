@@ -8,10 +8,9 @@ def load_config():
     """
     Load a config class
     """
-    # mode = os.environ.get('MODE', 'DEV')
-    tmp = app.config.ENV
+    env = os.environ.get('ENV', 'DEV')
+    # env = app.config.ENV # 不能使用这句，环境变量生命周期还没回来
     # 函数生成器，可以替代Java中的三目运算
-    env = tmp if tmp!=None  else 'DEV'
     try:
         if env == 'PRO':
             from .pro_config import ProConfig

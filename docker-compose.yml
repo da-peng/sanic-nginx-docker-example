@@ -9,9 +9,9 @@ services:
     volumes:
       - /usr/src/sanic-web/apps/statics
     environment:
-      - MYAPP_CUSTOM_CONF = 1234567890
-      - MYAPP_DEBUG = True
-      - MYAPP_ENV = DEV
+      - MYAPP_CUSTOM_CONF=1234567890
+      - MYAPP_DEBUG=True
+      - MYAPP_ENV=DEV
 
   nginx:
     restart: always

@@ -10,6 +10,6 @@ class Config(object):
     DB_HOST = 'localhost',
     DB_NAME = 'appdb',
     DB_USER = 'appuser',
-    DEV = None,
+    # ENV = None,
     
     BASE_DIR = os.path.dirname(os.path.dirname(__file__))
