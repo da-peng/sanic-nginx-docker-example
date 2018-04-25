@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - /usr/src/sanic-web/apps/static
+      - /usr/src/sanic-web/apps/statics
     environment:
       - MYAPP_CUSTOM_CONF = 1234567890
       - MYAPP_DEBUG = True
@@ -19,8 +19,6 @@ services:
     build: ./nginx
     ports:
      - "80:80"
-    volumes:
-     - /www/static
     volumes_from:
      - app
     links:
